@@ -8,4 +8,5 @@ An example Bayesian Network:
       |
       v
       B
+
       
