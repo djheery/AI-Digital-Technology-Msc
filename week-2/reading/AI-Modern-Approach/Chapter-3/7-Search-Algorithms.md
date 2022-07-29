@@ -118,7 +118,51 @@ There are 3 kinds of queues used in search algorithims
     - This is used in depth first search 
 
 
+## Handling Redundant paths 
 
+Search trees can have redundant paths, such as in the path search from Luton to Leeds there may be a path from Luton to nottingham, then as we expand into this node, the tree may have a path from nottingham to luton. 
+
+This path would known as redundant.
+Also a **loopy path** or **cycle** in this particular instance as we could cycle these paths infinitely 
+
+In a 10 X 10 grid the agent may be able to reach for any of the 8 paths available (providing there are no obstacles).
+
+This means that the agent could reach any of 100 the squares in 9 moves or fewer. 
+But the number of the paths of length 9 is almost 8^9 (a bit less because of the edges of the grid).
+
+That amounts to more than 100 million. 
+
+This means that the average cell could be reached more than a million different ways. 
+
+This is why we should eliminate redundant paths as the search algorithm would perform roughly a million times faster. 
+
+Saying: 
+
+**algorithms that cannot remember the past are doomed to repeat it**
+
+There are 3 approaches to this issue: 
+
+- Remember all previously visited states 
+  - This allows detection of redundant paths, as we will not vist previous paths 
+  - This is appropriate when there are many redundant paths 
+    - Appropriate providing all the states will fit in memory
+  
+- Second: Do not worry about repeating the past 
+  - In search problems where it is impossible for two paths to reach the same state this may be appropriate 
+  - An example would be an assembly problem where each action adds a part to an evolving assemblage, and there is an ordering of parts 
+    - This could be so A could be added then B, but not B then back to A .
+
+- Third: check for cycles (infinite loops such as luton to nottingham then nottingham back to luton) 
+  - In this case we don't chack for redundant paths 
+  - You do this byt following up the chain of paents to see if the state at the end of the path has appeared earlier 
+  
+## Graph search vs tree search 
+
+A search algorithm is a
+
+- Graph search 
+  - If it checks for redundant path
+- Tree search if it does not 
 
 
 
