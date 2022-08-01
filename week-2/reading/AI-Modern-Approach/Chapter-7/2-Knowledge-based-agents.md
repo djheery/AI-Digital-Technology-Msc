@@ -30,11 +30,20 @@ Each time the agent program is
 
 - First Tells the knowldge base what it percieves 
 - Second ASKs the knolefge base what action it should perform in the process of answering this query 
-- TELLS the knowledge base which action was chosen and returns the action so that it can be executed. 
+- Third TELLS the knowledge base which action was chosen and returns the action so that it can be executed. 
 
-The details of the representation language 
+The details of the representation language are bstracted into these three functions that implemnt the inference bbetween acutators and sensors on one side, and the core representation and reasoning system on the other. 
 
 **Percept** is the input that an intelligent agent is perceiving at any given moment. 
+
+A knowledge based agent can be built simply by telling it what it needs to know. 
+Starting with 0 knowledge in the knowledge base, the agent designer can TELL the sentences systematically adding to the knowledge base so that the agent knows and understands how to operate in its environment. 
+
+This is called a declaritive approach 
+
+A procedural approach will encode the desired behaviours of the agent directly into the code.
+
+A successful agent is often utilizes a combination of both procedural and declaritive elemnts in it's design. 
 
 
 
